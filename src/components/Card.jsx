@@ -2,13 +2,13 @@ import React from "react";
 
 export default class Card extends React.Component {
   render() {
-    const { image, title, description, releaseDate, onClick } = this.props;
+    const { image, title, description, releaseDate, onClick, id } = this.props;
     return (
       <>
         <div
           className="card m-2"
           style={{ width: "18rem" }}
-          onClick={onClick ? onClick : ""}
+          onClick={onClick ? () => onClick() : ""}
         >
           <img
             className="card-img-top"
