@@ -8,7 +8,7 @@ export default class Card extends React.Component {
         <div className="card m-2" style={{ width: "18rem" }}>
           <img
             className="card-img-top"
-            src={`https://api.themoviedb.org/3/discover/movie/${image}`}
+            src={`http://image.tmdb.org/t/p/w185/${image}`}
             alt={`${title} poster`}
           />
           <div className="card-body">
