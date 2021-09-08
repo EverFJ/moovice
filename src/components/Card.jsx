@@ -2,10 +2,14 @@ import React from "react";
 
 export default class Card extends React.Component {
   render() {
-    const { image, title, description, releaseDate } = this.props;
+    const { image, title, description, releaseDate, onClick } = this.props;
     return (
       <>
-        <div className="card m-2" style={{ width: "18rem" }}>
+        <div
+          className="card m-2"
+          style={{ width: "18rem" }}
+          onClick={onClick ? onClick : ""}
+        >
           <img
             className="card-img-top"
             src={`http://image.tmdb.org/t/p/w185/${image}`}

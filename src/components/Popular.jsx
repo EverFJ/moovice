@@ -22,8 +22,7 @@ export default class Popular extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
-    console.log("movies", this.state.movies);
+    // console.log("movies", this.state.movies);
     return (
       <div className="container">
         <div className="d-flex flex-wrap justify-content-center">
