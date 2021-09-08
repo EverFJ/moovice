@@ -27,9 +27,12 @@ export default class PopularBattle extends React.Component {
 
   handleCardClick = (id) => {
     if (!this.state.favorites.includes(id)) {
+      let newFavorites = [...this.state.favorites];
+      newFavorites.push(id);
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
       this.setState({
-        favorites: [...this.state.favorites, id],
-        currentBattle: this.state.currentBattle + 1,
+        favorites: newFavorites,
+        currentBattle: this.state.currentBattle + 2,
       });
     }
   };
@@ -38,13 +41,15 @@ export default class PopularBattle extends React.Component {
     const { movies, currentBattle, favorites } = this.state;
     console.log("movies", movies);
     console.log("favorites", favorites);
-
+    console.log("currentBattle", currentBattle);
+    console.log("local storage", localStorage);
     return (
       <>
         <h1>PopularBattle</h1>
         <div className="container">
           <div className="d-flex flex-wrap justify-content-center">
-            {movies.length !== 0 && (
+            {currentBattle > 18 && <h1>Vous avez parcouru tous les films</h1>}
+            {movies.length !== 0 && currentBattle <= 18 && (
               <Card
                 image={movies[currentBattle].poster_path}
                 title={movies[currentBattle].title}
@@ -54,7 +59,7 @@ export default class PopularBattle extends React.Component {
                 onClick={this.handleCardClick}
               />
             )}
-            {movies.length !== 0 && (
+            {movies.length !== 0 && currentBattle <= 18 && (
               <Card
                 image={movies[currentBattle + 1].poster_path}
                 title={movies[currentBattle + 1].title}
