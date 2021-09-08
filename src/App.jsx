@@ -65,7 +65,9 @@ export default class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/weekly" component={Weekly} />
             <Route exact path="/weekly-battle" component={WeeklyBattle} />
-            <Route exact path="/popular" component={Popular} />
+            <Route exact path="/popular">
+              <Popular apiKey={apiKey} />
+            </Route>
             <Route exact path="/popular-battle" component={PopularBattle} />
             <Route path="*" component={Error404} />
           </Switch>
