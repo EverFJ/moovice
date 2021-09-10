@@ -32,6 +32,7 @@ export default class Favorites extends React.Component {
     console.log("this.state.movies", this.state.movies);
     return (
       <>
+        <h1>Favorites</h1>
         <div className="container">
           <div className="d-flex flex-wrap justify-content-evenly mt-4">
             {this.state.movies.length !== 0 &&

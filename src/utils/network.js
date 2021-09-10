@@ -12,7 +12,7 @@ const getLatestMovies = () => {
         .then((res) => res.json())
         .then((data) => {
             movies.push(data.results)
-            return movies,
+            return movies
         });
 }
 
