@@ -14,26 +14,28 @@ export default class Popular extends React.Component {
     };
   }
 
-  componentDidMount() {
-    fetch(
-      `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${lastWeek}&primary_release_date.lte=${today}&api_key=${this.props.apiKey}`
-    )
-      .then((res) => res.json())
-      .then((data) =>
-        this.setState({
-          movies: data.results,
-        })
-      );
-  }
+  // componentDidMount() {
+  //   fetch(
+  //     `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${lastWeek}&primary_release_date.lte=${today}&api_key=${this.props.apiKey}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) =>
+  //       this.setState({
+  //         movies: data.results,
+  //       })
+  //     );
+  // }
 
   // componentDidMount() {
+  //   const movies = getLatestMovies();
   //   this.setState({
-  //     movies: getLatestMovies(),
+  //     movies: movies,
   //   });
   // }
 
   render() {
     // console.log("movies", this.state.movies);
+    getLatestMovies();
     return (
       <>
         <h1>Weekly</h1>
@@ -49,9 +51,6 @@ export default class Popular extends React.Component {
               />
             ))}
           </div>
-          {/* <button className="btn btn-primary m-2" onClick={this.handleMoreClick}>
-          Get more
-        </button> */}
         </div>
       </>
     );
