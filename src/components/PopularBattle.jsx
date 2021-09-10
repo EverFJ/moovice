@@ -7,7 +7,7 @@ export default class PopularBattle extends React.Component {
     this.state = {
       movies: [],
       currentBattle: 0,
-      favorites: [],
+      favorites: JSON.parse(localStorage.getItem("favorites")) || [],
     };
   }
   componentDidMount() {
