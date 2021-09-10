@@ -5,7 +5,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="#">
           Moovice
         </a>
         <button
@@ -45,6 +45,11 @@ export default class Navbar extends Component {
             <li className="nav-item">
               <Link className="nav-link" to="/popular-battle">
                 Popular Battle
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/favorites">
+                Favorites
               </Link>
             </li>
           </ul>

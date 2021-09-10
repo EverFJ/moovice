@@ -7,6 +7,7 @@ import Popular from "./components/Popular";
 import PopularBattle from "./components/PopularBattle";
 import Error404 from "./components/Error404";
 import Navbar from "./components/Navbar";
+import Favorites from "./components/Favorites";
 
 export default class App extends React.Component {
   render() {
@@ -16,7 +17,6 @@ export default class App extends React.Component {
       <>
         <BrowserRouter>
           <Navbar />
-
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/weekly" component={Weekly} />
@@ -27,6 +27,7 @@ export default class App extends React.Component {
             <Route exact path="/popular-battle">
               <PopularBattle apiKey={apiKey} />
             </Route>
+            <Route exact path="/favorites" component={Favorites} />
             <Route path="*" component={Error404} />
           </Switch>
         </BrowserRouter>

@@ -35,7 +35,7 @@ export default class Popular extends React.Component {
           movies: data.results,
         })
       );
-    let page = this.state.page + 20;
+    let page = this.state.page + 1;
     this.setState({
       page: page,
     });
