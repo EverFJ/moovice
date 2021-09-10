@@ -27,29 +27,28 @@ export default class Popular extends React.Component {
   // }
 
   // componentDidMount() {
-  //   const movies = getLatestMovies();
   //   this.setState({
-  //     movies: movies,
+  //     movies: getLatestMovies(),
   //   });
   // }
 
   render() {
-    // console.log("movies", this.state.movies);
-    getLatestMovies();
+    console.log("getLatestsMovies", getLatestMovies());
+    console.log("movies", this.state.movies);
     return (
       <>
         <h1>Weekly</h1>
         <div className="container">
           <div className="d-flex flex-wrap justify-content-evenly mt-4">
-            {this.state.movies.map((elem) => (
-              <Card
-                image={elem.poster_path}
-                title={elem.title}
-                description={elem.overview}
-                releaseDate={elem.release_date}
-                onClick={() => {}}
-              />
-            ))}
+            {this.state.movies !== 0 &&
+              this.state.movies.map((elem) => (
+                <Card
+                  image={elem.poster_path}
+                  title={elem.title}
+                  description={elem.overview}
+                  releaseDate={elem.release_date}
+                />
+              ))}
           </div>
         </div>
       </>

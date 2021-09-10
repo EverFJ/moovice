@@ -6,17 +6,14 @@ const lastWeek = moment().subtract(7, "d").format("YYYY-MM-DD");
 
 const getLatestMovies = () => {
     fetch(
-            `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${lastWeek}&primary_release_date.lte=${today}&api_key=${this.props.apiKey}`
+            `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${lastWeek}&primary_release_date.lte=${today}&api_key=${apiKey}`
         )
         .then((res) => res.json())
         .then((data) => {
-            console.log(data.results)
+            // console.log("network utils getLatestMovies fetch : ", data.results)
             return data.results
         })
-
-
 }
-
 
 const getPopularMovies = () => {
     let movies = [];
@@ -32,14 +29,13 @@ const getPopularMovies = () => {
 }
 
 const getMovie = (id) => {
-    let movie = []
     fetch(
             `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
         )
         .then((res) => res.json())
         .then((data) => {
-            movie.push(data)
-            return movie
+            // console.log("network utils getMovie fetch : ", data)
+            return data
         })
 }
 
