@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import moment from "moment";
+import { getLatestMovies } from "../utils/network.js";
 
 const today = moment().format("YYYY-MM-DD");
 const lastWeek = moment().subtract(7, "d").format("YYYY-MM-DD");

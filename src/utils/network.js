@@ -40,3 +40,9 @@ const getMovie = (id) => {
             return movie
         })
 }
+
+export {
+    getLatestMovies,
+    getPopularMovies,
+    getMovie
+}

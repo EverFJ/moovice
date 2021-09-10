@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import { getPopularMovies } from "../utils/network.js";
 
 export default class PopularBattle extends React.Component {
   constructor(props) {
@@ -11,7 +12,6 @@ export default class PopularBattle extends React.Component {
     };
   }
   componentDidMount() {
-    // console.log("mount");
     fetch(
       "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" +
         this.props.apiKey
@@ -43,6 +43,7 @@ export default class PopularBattle extends React.Component {
     console.log("favorites", favorites);
     console.log("currentBattle", currentBattle);
     console.log("local storage", localStorage);
+
     return (
       <>
         <h1>PopularBattle</h1>

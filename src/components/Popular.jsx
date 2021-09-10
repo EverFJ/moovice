@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import { getPopularMovies } from "../utils/network.js";
 
 export default class Popular extends React.Component {
   constructor(props) {
@@ -44,9 +45,10 @@ export default class Popular extends React.Component {
 
   render() {
     // console.log("movies", this.state.movies);
+    console.log(getPopularMovies.toString());
     return (
       <>
-        <h1>PopularBattle</h1>
+        <h1>Popular</h1>
 
         <div className="container">
           <div className="d-flex flex-wrap justify-content-evenly mt-4">
