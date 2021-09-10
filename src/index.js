@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-// import "bootstrap/dist/js/bootstrap";
+import "bootstrap/dist/js/bootstrap.js";
 
 ReactDOM.render(
   <React.StrictMode>
