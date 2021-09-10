@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import { Link } from "react-router-dom";
+import { getMovie } from "../utils/network.js";
 
 export default class Favorites extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class Favorites extends React.Component {
     };
   }
   componentDidMount() {
-    this.state.favIDs.map((elem) => this.getMovie(elem));
+    this.state.favIDs.forEach((elem) => this.getMovie(elem));
   }
 
   getStorage = () => {
