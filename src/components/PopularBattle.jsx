@@ -47,7 +47,7 @@ export default class PopularBattle extends React.Component {
       <>
         <h1>PopularBattle</h1>
         <div className="container">
-          <div className="d-flex flex-wrap justify-content-center">
+          <div className="d-flex flex-wrap justify-content-evenly mt-4">
             {currentBattle > 18 && <h1>Vous avez parcouru tous les films</h1>}
             {movies.length !== 0 && currentBattle <= 18 && (
               <Card

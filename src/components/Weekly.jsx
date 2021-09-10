@@ -29,7 +29,7 @@ export default class Popular extends React.Component {
     // console.log("movies", this.state.movies);
     return (
       <div className="container">
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-evenly mt-4">
           {this.state.movies.map((elem) => (
             <Card
               image={elem.poster_path}
