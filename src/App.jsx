@@ -19,7 +19,9 @@ export default class App extends React.Component {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/weekly" component={Weekly} />
+            <Route exact path="/weekly">
+              <Weekly apiKey={apiKey} />
+            </Route>
             <Route exact path="/weekly-battle" component={WeeklyBattle} />
             <Route exact path="/popular">
               <Popular apiKey={apiKey} />

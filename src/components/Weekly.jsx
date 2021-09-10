@@ -1,12 +1,15 @@
 import React from "react";
 import Card from "./Card";
+import moment from "moment";
+
+const today = moment();
+const lastWeek = moment().subtract(7, "d");
 
 export default class Popular extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       movies: [],
-      page: 20,
     };
   }
 
@@ -23,26 +26,9 @@ export default class Popular extends React.Component {
       );
   }
 
-  handleMoreClick = () => {
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=" +
-        this.state.page +
-        "&api_key=" +
-        this.props.apiKey
-    )
-      .then((res) => res.json())
-      .then((data) =>
-        this.setState({
-          movies: data.results,
-        })
-      );
-    let page = this.state.page + 1;
-    this.setState({
-      page: page,
-    });
-  };
-
   render() {
+    console.log("today", today);
+    console.log("lastWeek", lastWeek);
     // console.log("movies", this.state.movies);
     return (
       <div className="container">
