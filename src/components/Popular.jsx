@@ -9,6 +9,7 @@ export default class Popular extends React.Component {
       page: 20,
     };
   }
+
   componentDidMount() {
     fetch(
       "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" +
