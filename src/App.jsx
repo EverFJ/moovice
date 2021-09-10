@@ -12,7 +12,6 @@ import Favorites from "./components/Favorites";
 export default class App extends React.Component {
   render() {
     const apiKey = "e244ada1553937093a18263c9d2f0169";
-    const request = "https://api.themoviedb.org/3/movie/550?api_key=";
     return (
       <>
         <BrowserRouter>
@@ -22,7 +21,9 @@ export default class App extends React.Component {
             <Route exact path="/weekly">
               <Weekly apiKey={apiKey} />
             </Route>
-            <Route exact path="/weekly-battle" component={WeeklyBattle} />
+            <Route exact path="/weekly-battle">
+              <WeeklyBattle apiKey={apiKey} />
+            </Route>
             <Route exact path="/popular">
               <Popular apiKey={apiKey} />
             </Route>

@@ -2,8 +2,8 @@ import React from "react";
 import Card from "./Card";
 import moment from "moment";
 
-const today = moment();
-const lastWeek = moment().subtract(7, "d");
+const today = moment().format("YYYY-MM-DD");
+const lastWeek = moment().subtract(7, "d").format("YYYY-MM-DD");
 
 export default class Popular extends React.Component {
   constructor(props) {
@@ -15,8 +15,7 @@ export default class Popular extends React.Component {
 
   componentDidMount() {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" +
-        this.props.apiKey
+      `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${lastWeek}&primary_release_date.lte=${today}&api_key=${this.props.apiKey}`
     )
       .then((res) => res.json())
       .then((data) =>
@@ -27,8 +26,6 @@ export default class Popular extends React.Component {
   }
 
   render() {
-    console.log("today", today);
-    console.log("lastWeek", lastWeek);
     // console.log("movies", this.state.movies);
     return (
       <div className="container">
@@ -42,9 +39,9 @@ export default class Popular extends React.Component {
             />
           ))}
         </div>
-        <button className="btn btn-primary m-2" onClick={this.handleMoreClick}>
+        {/* <button className="btn btn-primary m-2" onClick={this.handleMoreClick}>
           Get more
-        </button>
+        </button> */}
       </div>
     );
   }
