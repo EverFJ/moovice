@@ -8,7 +8,7 @@ export default class Card extends React.Component {
         <div
           className="card m-2"
           style={{ width: "18rem" }}
-          onClick={onClick ? () => onClick(this.props.id) : ""}
+          onClick={() => onClick(this.props.id)}
         >
           <img
             className="card-img-top"

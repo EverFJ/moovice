@@ -5,14 +5,12 @@ const today = moment().format("YYYY-MM-DD");
 const lastWeek = moment().subtract(7, "d").format("YYYY-MM-DD");
 
 const getLatestMovies = () => {
-    let movies = [];
     fetch(
             `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${lastWeek}&primary_release_date.lte=${today}&api_key=${this.props.apiKey}`
         )
         .then((res) => res.json())
         .then((data) => {
-            movies.push(data.results)
-            return movies
+            return data.results
         });
 }
 

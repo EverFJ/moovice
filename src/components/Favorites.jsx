@@ -31,7 +31,7 @@ export default class Favorites extends React.Component {
   };
 
   render() {
-    console.log("this.state.movies", this.state.movies);
+    // console.log("this.state.movies", this.state.movies);
     return (
       <>
         <h1>Favorites</h1>
@@ -44,6 +44,7 @@ export default class Favorites extends React.Component {
                   title={elem.title}
                   description={elem.overview}
                   releaseDate={elem.release_date}
+                  onClick={() => {}}
                 />
               ))
             ) : (

@@ -45,7 +45,6 @@ export default class Popular extends React.Component {
 
   render() {
     // console.log("movies", this.state.movies);
-    console.log(getPopularMovies.toString());
     return (
       <>
         <h1>Popular</h1>
@@ -58,6 +57,7 @@ export default class Popular extends React.Component {
                 title={elem.title}
                 description={elem.overview}
                 releaseDate={elem.release_date}
+                onClick={() => {}}
               />
             ))}
           </div>
