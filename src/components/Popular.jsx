@@ -57,7 +57,6 @@ export default class Popular extends React.Component {
                 title={elem.title}
                 description={elem.overview}
                 releaseDate={elem.release_date}
-                // onClick={() => {}}
               />
             ))}
           </div>

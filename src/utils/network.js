@@ -34,7 +34,7 @@ const getMovie = (id) => {
         )
         .then((res) => res.json())
         .then((data) => {
-            // console.log("network utils getMovie fetch : ", data)
+            console.log("network utils getMovie fetch : ", data)
             return data
         })
 }

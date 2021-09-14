@@ -14,17 +14,17 @@ export default class Popular extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch(
-  //     `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${lastWeek}&primary_release_date.lte=${today}&api_key=${this.props.apiKey}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) =>
-  //       this.setState({
-  //         movies: data.results,
-  //       })
-  //     );
-  // }
+  componentDidMount() {
+    fetch(
+      `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${lastWeek}&primary_release_date.lte=${today}&api_key=${this.props.apiKey}`
+    )
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          movies: data.results,
+        })
+      );
+  }
 
   // componentDidMount() {
   //   this.setState({
@@ -33,8 +33,8 @@ export default class Popular extends React.Component {
   // }
 
   render() {
-    console.log("getLatestsMovies", getLatestMovies());
-    console.log("movies", this.state.movies);
+    // console.log("getLatestsMovies", getLatestMovies());
+    // console.log("movies", this.state.movies);
     return (
       <>
         <h1>Weekly</h1>
